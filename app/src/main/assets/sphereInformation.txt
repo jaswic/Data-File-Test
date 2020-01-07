@@ -1,0 +1,5 @@
+Zygo Standard f/0.65, 0.65, 1.25
+Zygo Standard f/0.75, 0.75, 0.98
+Zygo Standard f/3.3, 3.3, 0.68
+Zygo Standard f7.5, 7.5, 0.43
+Zygo Standard f11, 11.0, 0

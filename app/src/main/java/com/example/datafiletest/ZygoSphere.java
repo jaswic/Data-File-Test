@@ -1,7 +1,9 @@
 package com.example.datafiletest;
 
-public class ZygoSphere {
+import java.util.ArrayList;
+import java.util.List;
 
+public class ZygoSphere {
     private double fNumber;
     private double sphereRadius;
     private String name;
@@ -22,5 +24,27 @@ public class ZygoSphere {
 
     public String getName() {
         return name;
+    }
+
+    public List<String> evaluateLens(double lensRadius, double lensDiameter, boolean convex){
+        List<String> attributes = new ArrayList<>();
+        String coverage;
+        double rNumber = lensRadius / lensDiameter;
+
+        if (convex){
+            if (lensRadius > this.sphereRadius){
+                coverage = "0";
+            } else {
+                coverage = Double.toString(rNumber / this.fNumber);
+            }
+        } else {
+            coverage = Double.toString(rNumber / this.fNumber);
+        }
+
+        attributes.add(this.getName());
+        attributes.add(Double.toString(this.getfNumber()));
+        attributes.add(coverage);
+
+        return attributes;
     }
 }
