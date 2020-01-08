@@ -21,11 +21,14 @@ public class SimpleViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindData(SphereViewModel viewModel){
-        if (viewModel.getCoverage().length() > 4){
-            coverage.setText(viewModel.getCoverage().substring(0,4));}
-        else {
-           coverage.setText(viewModel.getCoverage());
+        String coverageAmount;
+
+        if(viewModel.getCoverage().length() > 4){
+            coverageAmount = viewModel.getCoverage().substring(0,4);
+        } else {
+            coverageAmount = viewModel.getCoverage();
         }
+        //coverage.setText(coverageAmount);
         if (viewModel.getCoverage() == "0"){
             coverage.setBackgroundResource(R.color.card_red);
             coverage.setTextColor(Color.parseColor("#FFD500"));
@@ -34,7 +37,10 @@ public class SimpleViewHolder extends RecyclerView.ViewHolder {
         } else {
             coverage.setBackgroundResource(R.color.card_green);
         }
-        smallGrayText.setText(viewModel.getCoverage());
+
+        double coveragePercent = Double.valueOf(coverageAmount) * 100.0;
+
+        smallGrayText.setText(Double.toString(coveragePercent) + "% coverage");
         largeGrayText.setText(viewModel.getSphereName());
     }
 }
