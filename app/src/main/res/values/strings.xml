@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Data File Test</string>
+    <string name="radio_convex">Convex</string>>
+    <string name="radio_concave">Concave</string>
 </resources>

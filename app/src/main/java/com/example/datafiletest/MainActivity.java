@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void openCardActivity(View v){
-        Intent intent = new Intent(this, CardViewActivity.class);
+    public void openActivity(View v){
+        Intent intent = new Intent(this, RecyclerViewActivity.class);
         startActivity(intent);
     }
 
