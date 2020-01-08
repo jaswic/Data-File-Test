@@ -1,11 +1,13 @@
 package com.example.datafiletest;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class SimpleViewHolder extends RecyclerView.ViewHolder {
@@ -26,6 +28,7 @@ public class SimpleViewHolder extends RecyclerView.ViewHolder {
         }
         if (viewModel.getCoverage() == "0"){
             coverage.setBackgroundResource(R.color.card_red);
+            coverage.setTextColor(Color.parseColor("#FFD500"));
         } else if ((Double.valueOf(viewModel.getCoverage()) < 1.0) && (Double.valueOf(viewModel.getCoverage()) > 0.0)){
             coverage.setBackgroundResource(R.color.card_yellow);
         } else {

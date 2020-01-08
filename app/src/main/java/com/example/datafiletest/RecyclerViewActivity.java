@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -71,8 +73,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         int i = 1;
         try{
-            //FileReader fileReader = new FileReader(context.getAssets().open("zygoAttributes.txt"));
-            //BufferedReader br = new BufferedReader(fileReader);
             BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("zygoAttributes.txt")));
             String inLine;
             String[] sphereAttributes;
@@ -93,9 +93,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 mList.add(sphereModel);
 
 
-                String message = "Loop number: " + i++ + "\nCoverage: " + results.get(2);
+                /*String message = "Loop number: " + i++ + "\nCoverage: " + results.get(2);
                 Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
-                toast.show();
+                toast.show();*/
             }
 
         } catch (IOException e){
@@ -103,4 +103,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
         }
         return mList;
     }
+
+
 }
